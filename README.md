@@ -19,7 +19,7 @@ jobs:
   pr-labeler:
     runs-on: ubuntu-latest
     steps:
-      - uses: TimonVS/pr-labeler-action@v3
+      - uses: netsells/pr-labeler-action@v3
         with:
           configuration-path: .github/pr-labeler.yml # optional, .github/pr-labeler.yml is the default value
         env:
@@ -33,10 +33,10 @@ Configure by creating a `.github/pr-labeler.yml` file.
 For example:
 
 ```yml
-feature: ['feature/*', 'feat/*']
-fix: fix/*
-chore: chore/*
-fixed-branch: fixed-branch-name
+feature: ['feature/*', 'epic/*', 'task/*']
+bug: bug/*
+release: develop
+hotfix: hotfix/*
 ```
 
 Then if a pull request is opened with the branch name `feature/218-add-emoji-support` the Action will automatically apply the `feature` label.
